@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 21:20:33 by barodrig          #+#    #+#             */
-/*   Updated: 2021/09/23 16:18:36 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:12:23 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,47 +18,11 @@
 # include <string.h>
 # include <stdio.h>
 # include <limits.h>
+# include "libft.h"
 
 # define TRUE 1
 # define FALSE 0
 # define BUFFER_SIZE 1024
-
-typedef struct s_global
-{
-	int				*tab;
-	struct	s_data	**stack_a;
-	struct	s_data	**stack_b;
-	struct	s_data	*mid;
-}					t_global;
-
-typedef struct s_data
-{
-	int				nbr;
-	int				index;
-	struct	s_data	*next;
-}					t_data;
-
-typedef struct	s_list
-{
-	void			*content;
-	struct s_list	*next;
-}				t_list;
-
-/**
-** LIBFT UTILS
-**/
-t_data	*ft_lstnew(int nbr, int i);
-void	ft_lstadd_front(t_data *new, t_data **stack);
-int		ft_lstsize(t_data **stack);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_data **stack, t_data *new);
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
-long	ft_atoi(const char *str);
-int		ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
 
 /**
 **	OTHER UTILS

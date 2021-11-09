@@ -6,13 +6,13 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 15:17:59 by barodrig          #+#    #+#             */
-/*   Updated: 2021/09/22 14:59:32 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:20:06 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_check_previous_rot(t_data **stack, int rot_count, char *str)
+/*void	ft_check_previous_rot(t_data **stack, int rot_count, char *str)
 {
 	while (rot_count)
 	{
@@ -107,77 +107,69 @@ int	ft_check_stack_a(t_data **stack, int flag)
 		return (0);
 }
 
-void	ft_sort_b(t_data **stack_a, t_data **stack_b, int min, int max)
+void	ft_sort_b(t_global *g, int min, int max)
 {
 	t_data	*mid;
 	int		rot_count;
 	int		size;
 
-	if (min > max || (ft_is_sorted(stack_a) && !(*stack_b)))
+	if (min > max || (ft_is_sorted(g->stack_a) && !(g->(*stack_b))))
 		return ;
 	rot_count = 0;
 	size = max - min + 1;
 	mid = ft_to_middle(stack_b, ((min + max) / 2));
-	while (ft_check_stack_b(stack_b, mid->nbr))
+	while (ft_check_stack_b(g->stack_b, mid->nbr))
 	{
-		if (ft_lstsize(stack_b) && size == 1 && ((*stack_b)->nbr >= mid->nbr))
-			ft_one_swap(stack_b, "sb");
-		if ((*stack_b)->nbr <  mid->nbr)
+		if (ft_lstsize(g->stack_b) && size == 1 && (g->(*stack_b)->nbr >= mid->nbr))
+			ft_one_swap(g->stack_b, "sb");
+		if (g->(*stack_b)->nbr <  mid->nbr)
 		{
-			ft_rotate(stack_b, "rb");
+			ft_rotate(g->stack_b, "rb");
 			rot_count++;
 		}
 		else
 		{
-			ft_push(stack_b, stack_a, "pa");
+			ft_push(g->stack_b, g->stack_a, "pa");
 			size--;
 		}
 	}
-		ft_check_previous_rot(stack_b, rot_count, "rrb");
-		ft_new_index(stack_a, stack_b);
-		ft_sort_a(stack_a, stack_b, ((min + max) / 2), max);
-		ft_sort_b(stack_a, stack_b, min, (((min + max) / 2) - 1));
+		ft_check_previous_rot(g->stack_b, rot_count, "rrb");
+		ft_new_index(g->stack_a, g->stack_b);
+		ft_sort_a(g->stack_a, g->stack_b, ((min + max) / 2), max);
+		ft_sort_b(g->stack_a, g->stack_b, min, (((min + max) / 2) - 1));
 	return ;
 }
 
-void	ft_sort_a(t_data **stack_a, t_data **stack_b, int min, int max)
+void	ft_sort_a(t_global *g, int min, int max)
 {
 	t_data	*mid;
 	int		rot_count;
 	int		size;
 
-	printf("SORT_A MIN = %i,    SORT_A MAX =%i\n", min, max);
-	if (min >= max || (ft_is_sorted(stack_a) && !(*stack_b)))
+	if (min >= max || (ft_is_sorted(g->stack_a) && !(g->(*stack_b))))
 		return ;
 	rot_count = 0;
-	mid = ft_to_middle(stack_a, ((min + max) / 2));
+	mid = ft_to_middle(g->stack_a, ((min + max) / 2));
 	size = ((min + max) / 2) + 1;
-	printf("SORT_A MIN = %i,    SORT_A MAX =%i,    SIZE = %i\nMID INDEX = %i,      MID VALUE = %i\n", min, max, size, mid->index, mid->nbr);
-				printf("STACK A :\n");
-	mid = ft_to_middle(stack_a, ((min + max) / 2));
-	while (ft_check_stack_a(stack_a, mid->nbr))
+	mid = ft_to_middle(g->stack_a, ((min + max) / 2));
+	while (ft_check_stack_a(g->stack_a, mid->nbr))
 	{
-		if (ft_lstsize(stack_a) && size == 1 && (*stack_a)->next->nbr <= mid->nbr)
-			ft_one_swap(stack_a, "sa");
-		if ((*stack_a)->nbr > mid->nbr)
+		if (ft_lstsize(g->stack_a) && size == 1 && g->(*stack_a)->next->nbr <= mid->nbr)
+			ft_one_swap(g->stack_a, "sa");
+		if (g->(*stack_a)->nbr > mid->nbr)
 		{
-			ft_rotate(stack_a, "ra");
+			ft_rotate(g->stack_a, "ra");
 			rot_count++;
 		}
 		else
 		{
-			ft_push(stack_a, stack_b, "pb");
+			ft_push(g->stack_a, g->stack_b, "pb");
 			size--;
 		}
-		printf("STACK A :\n");
-		ft_print_list(stack_a);
-		printf("STACK B :\n");
-		ft_print_list(stack_b);
-		printf("-----------------\n");
 	}
-	ft_check_previous_rot(stack_a, rot_count, "rra");
-	ft_new_index(stack_a, stack_b);
-	ft_sort_a(stack_a, stack_b, (((min + max) / 2) + 1), max);
-	ft_sort_b(stack_a, stack_b, min, ((min + max) / 2));
+	ft_check_previous_rot(g->stack_a, rot_count, "rra");
+	ft_new_index(g->stack_a, g->stack_b);
+	ft_sort_a(g->stack_a, g->stack_b, (((min + max) / 2) + 1), max);
+	ft_sort_b(g->stack_a, g->stack_b, min, ((min + max) / 2));
 	return ;
-}
+}*/

@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_utils.c                                      :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/06 13:57:04 by barodrig          #+#    #+#             */
-/*   Updated: 2021/09/08 14:50:33 by barodrig         ###   ########.fr       */
+/*   Created: 2021/01/13 10:42:44 by barodrig          #+#    #+#             */
+/*   Updated: 2021/10/15 17:12:15 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	while (*s1 == *s2 && *s1 && *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return ((unsigned char)*s1 - (unsigned char)*s2);
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-long	ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	long long int	res;
 	long long int	sign;
@@ -53,5 +33,5 @@ long	ft_atoi(const char *str)
 		res = res * 10 + (*str - 48);
 		str++;
 	}
-	return (res * sign);
+	return ((int)(res * sign));
 }
