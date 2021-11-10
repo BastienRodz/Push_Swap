@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 11:39:17 by barodrig          #+#    #+#             */
-/*   Updated: 2021/09/23 16:20:28 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/09 17:28:58 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ void	quicksort_int_tab(int *tab, int min, int max)
 			while (tab[value2] > tab[pivot] && value2 >= min)
 				value2--;
 			if (value1 < value2)
+			{
 				ft_swap(&tmp, tab, value1, value2);
+			}
 		}
 		tmp = tab[value2];
 		tab[value2] = tab[pivot];
@@ -72,6 +74,6 @@ void	builder_solver_int_tab(t_global *g, t_data **stack)
 		tmp = tmp->next;
 	}
 	g->tab[i] = tmp->nbr;
-	quicksort_int_tab(g->tab, 0, size);
+	quicksort_int_tab(g->tab, 0, size - 1);
 	return ;
 }

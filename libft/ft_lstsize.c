@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 11:44:46 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/09 16:08:04 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:56:56 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	ft_lstsize(t_data **stack)
 		lst = lst->next;
 		size++;
 	}
+	size++;
 	return (size);
 }

@@ -6,7 +6,7 @@
 #    By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 14:49:05 by barodrig          #+#    #+#              #
-#    Updated: 2021/11/09 16:19:08 by barodrig         ###   ########.fr        #
+#    Updated: 2021/11/09 17:11:35 by barodrig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SHELL	= /bin/sh
 
 NAME = push_swap
 
-CC = clang -Wall -Wextra -Werror
+CC = clang -g3 -Wall -Wextra -Werror
 
 INC= -I./includes
 
