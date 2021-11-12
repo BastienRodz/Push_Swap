@@ -6,7 +6,7 @@
 #    By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 14:49:05 by barodrig          #+#    #+#              #
-#    Updated: 2021/11/09 17:11:35 by barodrig         ###   ########.fr        #
+#    Updated: 2021/11/12 15:13:31 by barodrig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ INC= -I./includes
 BONUS= \
 
 SRCS = 	push_swap errors instructions instructions_next\
-		sort_int_tab sort utils
+		sort_int_tab sort utils sort_three
 
 FIL = $(addsuffix .c, $(addprefix srcs/, $(SRCS)))
 

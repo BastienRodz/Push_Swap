@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 21:20:54 by barodrig          #+#    #+#             */
-/*   Updated: 2021/09/11 14:22:24 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/12 14:15:09 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_one_swap(t_data **list, char *str)
 	t_data	*tmp_2;
 
 	if (!(*list) || !(*list)->next)
-		return;
+		return ;
 	tmp = *list;
 	tmp_2 = (*list)->next;
 	tmp->next = tmp_2->next;
@@ -45,7 +45,7 @@ void	ft_push(t_data **src, t_data **dst, char *str)
 	t_data	*new;
 
 	if (!(*src))
-		return;
+		return ;
 	new = (*src)->next;
 	ft_lstadd_front(*src, dst);
 	*src = new;

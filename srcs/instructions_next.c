@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 16:51:01 by barodrig          #+#    #+#             */
-/*   Updated: 2021/09/11 14:24:45 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/12 14:15:22 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_reverse_rotate(t_data **stack, char *str)
 	end = *stack;
 	new = 0;
 	if (!(*stack) || !(*stack)->next)
-		return;
+		return ;
 	while (end->next)
 	{
 		if (end->next)

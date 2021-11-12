@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 21:20:33 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/09 16:12:23 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/12 15:12:59 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	ft_good_digits(char **av);
 void	ft_are_digits(char **av);
 int		ft_is_sorted(t_data **chk_a);
 
-
-
 /**
 ** LIST INSTRUCTIONS
 **/
@@ -53,6 +51,7 @@ void	ft_two_reverse_rotates(t_data **stack_a, t_data **stack_b, int print);
 void	ft_sort_a(t_data **stack_a, t_data **stack_b, int min, int max);
 void	quicksort_int_tab(int *tab, int min, int max);
 void	builder_solver_int_tab(t_global *g, t_data **stack);
+void	ft_sort_three(t_data **stack);
 
 /**
 ** BONUS CHECKER
