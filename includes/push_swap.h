@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 21:20:33 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/12 15:12:59 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:47:00 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 **/
 void	ft_error(void);
 void	ft_print_list(t_data **list_a);
-void	ft_create_list(char **av, t_data **stack_a);
+void	ft_create_list(int ac, char **av, t_data **stack_a);
 void	ft_good_digits(char **av);
 void	ft_are_digits(char **av);
 int		ft_is_sorted(t_data **chk_a);

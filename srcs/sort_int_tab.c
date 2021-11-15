@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 11:39:17 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/12 15:18:28 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:53:10 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,20 @@ void	builder_solver_int_tab(t_global *g, t_data **stack)
 	t_data	*tmp;
 	int		i;
 
-	tmp = (*stack);
+	tmp = *stack;
+	printf("TMP->NBR = %i\n", (*stack)->nbr);
+	size = 0;
 	i = 0;
-	size = ft_lstsize(stack);
-	g->tab = (int *)malloc(sizeof(int) * size);
-	while (tmp->next)
+	g->tab = (int *)malloc(sizeof(int) * g->size);
+	while (tmp)
 	{
-		g->tab[i++] = tmp->nbr;
-		tmp = tmp->next;
+		if (tmp->next != NULL)
+		{
+			g->tab[i++] = tmp->nbr;
+			tmp = tmp->next;
+		}
+		else
+			break ;
 	}
 	g->tab[i] = tmp->nbr;
 	quicksort_int_tab(g->tab, 0, size - 1);

@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:18:17 by barodrig          #+#    #+#             */
-/*   Updated: 2021/09/22 14:55:29 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/13 12:18:58 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,13 @@ void	ft_print_list(t_data **list)
 	return ;
 }
 
-void	ft_create_list(char **av, t_data **stack_a)
+void	ft_create_list(int ac, char **av, t_data **stack_a)
 {
 	int		i;
 	t_data	*new;
 
 	i = 0;
+	stack_a->nbr = (t_data *)malloc(sizeof(t_data *) * ac - 1);
 	while (av[++i])
 	{
 		new = ft_lstnew(ft_atoi(av[i]), i);

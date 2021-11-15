@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 11:44:46 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/09 16:56:56 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/12 18:34:43 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,15 @@ int	ft_lstsize(t_data **stack)
 	size = 0;
 	if (!lst)
 		return (0);
-	while (lst->next)
+	while (lst)
 	{
-		lst = lst->next;
-		size++;
+		if (lst->next != NULL)
+		{
+			lst = lst->next;
+			size++;
+		}
+		else
+			break ;
 	}
 	size++;
 	return (size);
