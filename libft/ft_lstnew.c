@@ -16,7 +16,7 @@ t_data	*ft_lstnew(int nbr, int i)
 {
 	t_data	*list;
 
-	list = (t_data *)malloc(sizeof(t_data *));
+	list = (t_data *)malloc(sizeof(t_data));
 	if (!list)
 		return (0);
 	list->nbr = nbr;
