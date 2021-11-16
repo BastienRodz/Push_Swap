@@ -20,17 +20,19 @@
 typedef struct s_global
 {
 	int				*tab;
+	char			**av;
 	int				size;
-	struct s_data	*stack_a;
-	struct s_data	*stack_b;
+	struct s_data	**stack_a;
+	struct s_data	**stack_b;
 	struct s_data	*mid_a;
 	struct s_data	*mid_b;
+	int				min;
 }					t_global;
 
 typedef struct s_data
 {
-	int				*nbr;
-	int				size;
+	int				nbr;
+	int				index;
 	struct s_data	*next;
 }					t_data;
 

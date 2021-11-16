@@ -14,8 +14,8 @@
 
 void	ft_error(void)
 {
-	write(1, "Error\n", 6);
-	exit(0);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 /*void	ft_error_free(t_data **stack_a, t_data **stack_b)

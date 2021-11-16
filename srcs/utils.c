@@ -15,14 +15,15 @@
 int	ft_is_sorted(t_data **chk_a)
 {
 	int		i;
-	int		before;
+	long	before;
 	int		size;
 	t_data	*tmp;
 
 	tmp = *chk_a;
 	i = 0;
 	size = ft_lstsize(chk_a);
-	while (i <= size)
+	before = -2147483649;
+	while (i < size)
 	{
 		if (tmp->nbr < before)
 			return (FALSE);
@@ -49,13 +50,12 @@ void	ft_print_list(t_data **list)
 	return ;
 }
 
-void	ft_create_list(int ac, char **av, t_data **stack_a)
+void	ft_create_list(char **av, t_data **stack_a)
 {
 	int		i;
 	t_data	*new;
 
 	i = 0;
-	stack_a->nbr = (t_data *)malloc(sizeof(t_data *) * ac - 1);
 	while (av[++i])
 	{
 		new = ft_lstnew(ft_atoi(av[i]), i);

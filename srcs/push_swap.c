@@ -24,18 +24,21 @@ int	main(int ac, char **av)
 		ft_error();
 	ft_are_digits(av);
 	ft_good_digits(av);
-	ft_create_list(ac, av, &stack_a);
+	ft_create_list(av, &stack_a);
 	g.stack_a = &stack_a;
 	g.stack_b = &stack_b;
+	g.av = av;
 	g.size = ft_lstsize(g.stack_a);
 	builder_solver_int_tab(&g, g.stack_a);
-	if (ac <= 4)
+	if	(ft_is_sorted(g.stack_a))
+		return (1);
+	if (ac < 3)
+		return (1);
+	else if (ac == 4 || ac == 3)
 		ft_sort_three(g.stack_a);
-	/*else if (ac <= 6 && ac > 4)
-		ft_sort_five();
+	else if (ac == 5 || ac == 6)
+		ft_sort_five(&g, g.stack_a, g.stack_b);
 	else
-		ft_quick_sort();
-	*/
-	//ft_sort_a(&stack_a, &stack_b, 0, size - 1);
+		ft_sort_a(&g, 0, g.size - 1);
 	return (1);
 }

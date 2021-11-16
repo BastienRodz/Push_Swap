@@ -60,13 +60,10 @@ void	quicksort_int_tab(int *tab, int min, int max)
 
 void	builder_solver_int_tab(t_global *g, t_data **stack)
 {
-	int		size;
 	t_data	*tmp;
 	int		i;
 
 	tmp = *stack;
-	printf("TMP->NBR = %i\n", (*stack)->nbr);
-	size = 0;
 	i = 0;
 	g->tab = (int *)malloc(sizeof(int) * g->size);
 	while (tmp)
@@ -80,6 +77,6 @@ void	builder_solver_int_tab(t_global *g, t_data **stack)
 			break ;
 	}
 	g->tab[i] = tmp->nbr;
-	quicksort_int_tab(g->tab, 0, size - 1);
+	quicksort_int_tab(g->tab, 0, g->size - 1);
 	return ;
 }

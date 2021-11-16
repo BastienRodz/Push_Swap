@@ -21,7 +21,7 @@ INC= -I./includes
 BONUS= \
 
 SRCS = 	push_swap errors instructions instructions_next\
-		sort_int_tab sort utils sort_three
+		sort_int_tab sort utils sort_small
 
 FIL = $(addsuffix .c, $(addprefix srcs/, $(SRCS)))
 
