@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 21:20:30 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/12 18:57:59 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:50:41 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ int	main(int ac, char **av)
 	else if (ac == 5 || ac == 6)
 		ft_sort_five(&g, &g.stack_a, &g.stack_b);
 	else
-		ft_sort_a(&g, 0, g.size - 1);
+		ft_sort_a(&g, 0, g.tab[g.size - 1]);
+	printf("STACK A\n");
+	ft_print_list(&g.stack_a);
+	printf("\nSTACK B\n");
+	ft_print_list(&g.stack_b);
 	return (1);
 }
