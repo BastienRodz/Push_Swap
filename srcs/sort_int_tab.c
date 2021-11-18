@@ -12,11 +12,11 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_swap(int *tmp, int *tab, int value1, int value2)
+void	ft_swap(int *tmp, int **tab, int value1, int value2)
 {
-	*tmp = tab[value1];
-	tab[value1] = tab[value2];
-	tab[value2] = *tmp;
+	*tmp = (*tab)[value1];
+	(*tab)[value1] = (*tab)[value2];
+	(*tab)[value2] = *tmp;
 	return ;
 }
 
@@ -27,7 +27,7 @@ void	init_values(int *value1, int *value2, int min, int max)
 	return ;
 }
 
-void	quicksort_int_tab(int *tab, int min, int max)
+void	quicksort_int_tab(int **tab, int min, int max)
 {
 	int	pivot;
 	int	value1;
@@ -40,43 +40,56 @@ void	quicksort_int_tab(int *tab, int min, int max)
 		pivot = min;
 		while (value1 < value2)
 		{
-			while (tab[value1] <= tab[pivot] && value1 <= max)
+			while ((*tab)[value1] <= (*tab)[pivot] && value1 <= max)
 				value1++;
-			while (tab[value2] > tab[pivot] && value2 >= min)
+			while ((*tab)[value2] > (*tab)[pivot] && value2 >= min)
 				value2--;
 			if (value1 < value2)
-			{
 				ft_swap(&tmp, tab, value1, value2);
-			}
 		}
-		tmp = tab[value2];
-		tab[value2] = tab[pivot];
-		tab[pivot] = tmp;
+		tmp = (*tab)[value2];
+		(*tab)[value2] = (*tab)[pivot];
+		(*tab)[pivot] = tmp;
 		quicksort_int_tab(tab, min, value2 - 1);
 		quicksort_int_tab(tab, value2 + 1, max);
 	}
 	return ;
 }
 
-void	builder_solver_int_tab(t_global *g, t_data **stack)
+void	builder_solver_int_tab(int **tab, t_global *g, t_data **stack)
 {
 	t_data	*tmp;
 	int		i;
 
 	tmp = *stack;
 	i = 0;
-	g->tab = (int *)malloc(sizeof(int) * g->size);
+	*tab = (int *)malloc(sizeof(int) * g->size);
 	while (tmp)
 	{
 		if (tmp->next != NULL)
 		{
-			g->tab[i++] = tmp->nbr;
+			(*tab)[i++] = tmp->nbr;
 			tmp = tmp->next;
 		}
 		else
 			break ;
 	}
-	g->tab[i] = tmp->nbr;
-	quicksort_int_tab(g->tab, 0, g->size - 1);
+	(*tab)[i] = tmp->nbr;
+	quicksort_int_tab(tab, 0, g->size - 1);
+	return ;
+}
+
+void	solve_int_tab(t_global *g, t_data **stack, int flag)
+{
+	if (flag == 0)
+	{
+		if (g->tab)
+			free(g->tab);
+		builder_solver_int_tab(&g->tab, g, stack);
+	}
+	else if (flag == 1)
+		builder_solver_int_tab(&g->tab_a, g, stack);
+	else
+		builder_solver_int_tab(&g->tab_b, g, stack);
 	return ;
 }

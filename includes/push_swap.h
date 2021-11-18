@@ -50,8 +50,7 @@ void	ft_two_reverse_rotates(t_data **stack_a, t_data **stack_b, int print);
 **	SOLVER
 **/
 void	ft_sort_a(t_global *g, int min, int max);
-void	quicksort_int_tab(int *tab, int min, int max);
-void	builder_solver_int_tab(t_global *g, t_data **stack);
+void	solve_int_tab(t_global *g, t_data **stack, int flag);
 void	ft_sort_three(t_data **stack);
 void	ft_sort_five(t_global *g, t_data **stack_a, t_data **stack_b);
 
