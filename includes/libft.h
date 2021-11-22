@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:59:41 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/18 17:38:10 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/22 10:57:02 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ typedef struct s_global
 	int				*tab;
 	int				*tab_a;
 	int				*tab_b;
-	char				**av;
+	char			**av;
 	int				size;
 	struct s_data	*stack_a;
 	struct s_data	*stack_b;
-	struct s_data	*mid_a;
-	struct s_data	*mid_b;
+	int				mid_a;
+	int				mid_b;
 	int				min;
 }					t_global;
 

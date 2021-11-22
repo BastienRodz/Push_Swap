@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 21:20:30 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/18 18:08:52 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/22 10:55:26 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int ac, char **av)
 	ft_good_digits(av);
 	ft_init_global(&g, av);
 	solve_int_tab(&g, &g.stack_a, 0);
-	if	(ft_is_sorted(&g.stack_a))
+	if (ft_is_sorted(&g.stack_a))
 		return (1);
 	if (ac < 3)
 		return (1);
@@ -45,6 +45,6 @@ int	main(int ac, char **av)
 	else if (ac == 5 || ac == 6)
 		ft_sort_five(&g, &g.stack_a, &g.stack_b);
 	else
-		ft_sort_a(&g, 0, g.size - 1);
+		ft_quicksort_a(&g, 0, g.size - 1);
 	return (1);
 }

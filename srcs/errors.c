@@ -30,8 +30,8 @@ void	ft_free_tabs(t_global *g)
 
 void	ft_free_stacks(t_global *g)
 {
-	t_data *tmp;
-	
+	t_data	*tmp;
+
 	while (g->stack_a->next)
 	{
 		tmp = g->stack_a->next;
