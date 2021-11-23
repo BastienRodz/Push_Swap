@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:18:17 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/18 17:34:56 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/23 08:41:38 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,7 @@ void	ft_good_digits(char **av)
 	i = 0;
 	while (av[++i])
 	{
-		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
-			ft_error();
-		else
-			n = ft_atoi(av[i]);
+		n = ft_atoi(av[i]);
 		j = 0;
 		while (av[++j])
 		{

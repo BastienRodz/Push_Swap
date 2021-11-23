@@ -6,11 +6,12 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 10:42:44 by barodrig          #+#    #+#             */
-/*   Updated: 2021/10/15 17:12:15 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/23 08:43:22 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+#include "../includes/push_swap.h"
 
 int	ft_atoi(const char *str)
 {
@@ -33,5 +34,7 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (*str - 48);
 		str++;
 	}
+	if (res * sign > INT_MAX || res * sign < INT_MIN)
+			ft_error();
 	return ((int)(res * sign));
 }

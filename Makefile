@@ -6,7 +6,7 @@
 #    By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 14:49:05 by barodrig          #+#    #+#              #
-#    Updated: 2021/11/22 12:53:08 by barodrig         ###   ########.fr        #
+#    Updated: 2021/11/23 08:44:48 by barodrig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SHELL	= /bin/sh
 
 NAME = push_swap
 
-CC = clang -fsanitize=address -g3 -Wall -Wextra -Werror
+CC = clang -g3 -Wall -Wextra -Werror
 
 INC= -I./includes
 
@@ -49,7 +49,6 @@ clean:
 fclean: clean
 	@make -s fclean -C ./libft
 	@rm -f $(NAME)
-	@rm -f $(NAME)_bonus
 
 re: fclean all
 

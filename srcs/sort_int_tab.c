@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 11:39:17 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/18 15:57:35 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/23 08:30:31 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,5 @@ void	solve_int_tab(t_global *g, t_data **stack, int flag)
 			free(g->tab);
 		builder_solver_int_tab(&g->tab, g, stack);
 	}
-	else if (flag == 1)
-		builder_solver_int_tab(&g->tab_a, g, stack);
-	else
-		builder_solver_int_tab(&g->tab_b, g, stack);
 	return ;
 }

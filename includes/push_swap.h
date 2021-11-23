@@ -6,7 +6,7 @@
 /*   By: barodrig <barodrig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/14 21:20:33 by barodrig          #+#    #+#             */
-/*   Updated: 2021/11/22 10:55:16 by barodrig         ###   ########.fr       */
+/*   Updated: 2021/11/23 08:32:49 by barodrig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 **	OTHER UTILS
 **/
 void	ft_error(void);
+void	ft_error_free(t_global *g);
 void	ft_print_list(t_data **list_a);
 void	ft_create_list(char **av, t_data **stack_a);
 void	ft_good_digits(char **av);
